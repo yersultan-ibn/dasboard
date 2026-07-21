@@ -1,0 +1,59 @@
+.wrapper {
+  overflow-x: auto;
+  margin: 0 -0.25rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.table th,
+.table td {
+  padding: 0.6rem 0.5rem;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.table th {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+}
+
+.table tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.mission {
+  font-weight: 600;
+  color: var(--text);
+  max-width: 16ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.muted {
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.statusCol {
+  text-align: right;
+}
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.4rem 0;
+}

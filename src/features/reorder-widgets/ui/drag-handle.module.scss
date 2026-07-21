@@ -1,0 +1,22 @@
+.handle {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  cursor: grab;
+  touch-action: none;
+  transition:
+    color 0.15s var(--ease),
+    background-color 0.15s var(--ease);
+}
+
+.handle:hover {
+  color: var(--text-2);
+  background: var(--surface-2);
+}
+
+.handle:active {
+  cursor: grabbing;
+}

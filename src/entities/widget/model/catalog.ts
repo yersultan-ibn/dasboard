@@ -1,0 +1,57 @@
+import { env } from "@/shared/config/env";
+
+import type { WidgetDefinition, WidgetType } from "./types";
+
+/**
+ * The catalog is the single source of widget metadata: titles, captions and the
+ * icon each widget shows. Both the library (what you can add) and the canvas
+ * frame (heading over the content) read from here, so a widget is described in
+ * exactly one place.
+ */
+const CATALOG: WidgetDefinition[] = [
+  {
+    type: "launch-table",
+    title: "Таблица запусков",
+    caption: "Последние миссии и их статусы",
+    description:
+      "Хронология последних запусков: миссия, дата, ракета и результат.",
+    icon: "table",
+  },
+  {
+    type: "stats",
+    title: "Статистика",
+    caption: "Ключевые показатели программы",
+    description:
+      "Всего запусков, доля успешных и ближайший старт в виде KPI-плиток.",
+    icon: "gauge",
+  },
+  {
+    type: "launch-chart",
+    title: "Запуски по годам",
+    caption: "Динамика активности SpaceX",
+    description:
+      "Распределение количества запусков по годам в виде столбчатой диаграммы.",
+    icon: "chart",
+  },
+  {
+    type: "news",
+    title: "Карточка запуска",
+    caption: "Последний или ближайший старт",
+    description:
+      "Ближайший (или последний) запуск с эмблемой миссии и описанием.",
+    icon: "sparkles",
+  },
+];
+
+/** Widgets available to add — respects the news feature flag for the current env. */
+export function getAvailableWidgetDefinitions(): WidgetDefinition[] {
+  return CATALOG.filter(
+    (widget) => env.features.newsWidget || widget.type !== "news",
+  );
+}
+
+export function getWidgetDefinition(
+  type: WidgetType,
+): WidgetDefinition | undefined {
+  return CATALOG.find((widget) => widget.type === type);
+}

@@ -1,0 +1,63 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.85rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+}
+
+.metricHead {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+.value {
+  font-size: 1.55rem;
+  font-weight: 680;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.valueSmall {
+  font-size: 0.98rem;
+  font-weight: 620;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+// icon tint carries identity; the number itself stays in ink
+.good {
+  color: var(--good);
+}
+
+.critical {
+  color: var(--critical);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.neutral {
+  color: var(--text-2);
+}
+
+@media (max-width: 460px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

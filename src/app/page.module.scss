@@ -1,0 +1,66 @@
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.hero {
+  margin-bottom: 1.75rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.title {
+  margin-top: 0.9rem;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 720;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  max-width: 20ch;
+}
+
+.subtitle {
+  margin-top: 0.75rem;
+  max-width: 64ch;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-2);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.sidebar {
+  position: sticky;
+  top: 84px;
+}
+
+.canvas {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+}
