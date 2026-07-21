@@ -1,12 +1,3 @@
-/**
- * Typed, centralized access to public environment configuration.
- *
- * The environment is driven by `NEXT_PUBLIC_APP_ENV` rather than `NODE_ENV`:
- * on a host like Vercel every deployment runs with `NODE_ENV=production`, so
- * `NODE_ENV` cannot tell a *development* deployment apart from a *production*
- * one. An explicit public flag can, and it is what makes the two environments
- * differ in more than name (API endpoint, banner, feature flags, logging).
- */
 export type AppEnv = "development" | "production";
 
 function parseAppEnv(value: string | undefined): AppEnv {
@@ -41,7 +32,6 @@ export const env = {
   },
 
   logging: {
-    // dev: full request/response tracing; prod: errors only
     verbose: appEnv === "development",
   },
 } as const;

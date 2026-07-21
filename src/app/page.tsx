@@ -10,8 +10,6 @@ import { DashboardView } from "./ui/dashboard-view";
 export default async function Home() {
   const queryClient = makeQueryClient();
 
-  // Warm the cache on the server so the first client paint is already hydrated
-  // (no loading flash) — this is where SSR genuinely helps: the data.
   await Promise.all([
     queryClient.prefetchQuery(launchQueries.list()),
     queryClient.prefetchQuery(launchQueries.latest()),

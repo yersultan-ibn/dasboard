@@ -190,6 +190,11 @@ Query keys ([query-keys.ts](src/entities/launch/api/query-keys.ts)) и фабр�
 Нужны две отдельные ссылки, поэтому создаём **два проекта Vercel из одного
 репозитория** — у каждого свои стабильные URL и переменные окружения.
 
+Текущие окружения:
+
+- **Production:** https://dashboard-prod-chi.vercel.app/
+- **Development:** https://dasboard-dev.vercel.app/
+
 1. Запушить репозиторий на GitHub.
 2. **Production:** Vercel → _Add New Project_ → импортировать репозиторий.
    Framework определится как Next.js, пакетный менеджер — yarn. Переменные:

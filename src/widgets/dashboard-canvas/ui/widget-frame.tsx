@@ -13,11 +13,6 @@ type WidgetFrameProps = {
   children: ReactNode;
 };
 
-/**
- * The chrome around every tile: title/caption pulled from the widget catalog,
- * a drag handle (wired via the reorder feature's context) and a remove action.
- * Tiles themselves render content only — the frame is composed here, once.
- */
 export const WidgetFrame: FC<WidgetFrameProps> = ({
   widgetId,
   type,

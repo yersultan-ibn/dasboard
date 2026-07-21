@@ -29,11 +29,6 @@ import styles from "./dashboard-canvas.module.scss";
 import { WidgetFrame } from "./widget-frame";
 
 type DashboardCanvasProps = {
-  /**
-   * Inversion of control: the app layer supplies the type→content mapping, so
-   * the canvas never imports sibling widget slices (which FSD forbids) and stays
-   * a pure layout + reordering surface.
-   */
   renderWidgetContent: (type: WidgetType) => ReactNode;
 };
 
@@ -51,8 +46,6 @@ export const DashboardCanvas: FC<DashboardCanvasProps> = ({
     }),
   );
 
-  // Until the persisted config rehydrates, render a skeleton that matches on the
-  // server and the first client render (no hydration mismatch).
   if (!hydrated) {
     return (
       <div className={styles.grid} aria-hidden="true">

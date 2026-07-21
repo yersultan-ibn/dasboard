@@ -26,7 +26,6 @@ type ChartTokens = {
   text: string;
 };
 
-// Sensible light-theme fallbacks for SSR / first paint before CSS vars are read.
 const FALLBACK: ChartTokens = {
   accent: "#2a78d6",
   grid: "#e1e0d9",
@@ -36,12 +35,6 @@ const FALLBACK: ChartTokens = {
   text: "#0b0e14",
 };
 
-/**
- * Recharts renders SVG attributes, which don't resolve `var(--token)`. So we
- * read the resolved token values off the document and re-read whenever the theme
- * changes (toggle stamps `data-theme`; OS change fires the media query) — the
- * chart recolors in lockstep with the rest of the UI.
- */
 function useChartTokens(): ChartTokens {
   const [tokens, setTokens] = useState<ChartTokens>(FALLBACK);
 

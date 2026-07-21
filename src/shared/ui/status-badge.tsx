@@ -19,10 +19,6 @@ type StatusBadgeProps = {
   label: string;
 };
 
-/**
- * Status is always icon + label + reserved color — never color alone — so it
- * stays legible for colorblind readers and against any surface.
- */
 export const StatusBadge: FC<StatusBadgeProps> = ({ tone, label }) => (
   <span className={cn(styles.badge, styles[tone])}>
     <Icon name={TONE_ICON[tone]} size={13} />

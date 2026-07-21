@@ -28,7 +28,6 @@ export type LaunchStats = {
   total: number;
   successful: number;
   failed: number;
-  /** Success share of decided launches (0–100), or null when nothing is decided. */
   successRate: number | null;
   upcomingLabel: string;
 };

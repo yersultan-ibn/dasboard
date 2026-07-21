@@ -12,12 +12,6 @@ import { WidgetLibrary } from "@/widgets/widget-library";
 
 import styles from "../page.module.scss";
 
-/**
- * The widget registry lives here, in the app layer — the one place allowed to
- * depend on every widget slice. The canvas receives `renderWidgetContent` and
- * never imports its sibling widgets, keeping the widgets layer free of the
- * same-layer cross-imports FSD forbids.
- */
 const WIDGET_COMPONENTS: Record<WidgetType, FC> = {
   "launch-table": LaunchesTableWidget,
   stats: LaunchStatsWidget,

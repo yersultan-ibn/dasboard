@@ -18,11 +18,6 @@ function readInitialTheme(): Theme {
     : "light";
 }
 
-/**
- * Toggles between light and dark by stamping `data-theme` on <html> (which the
- * token scopes in globals.scss react to) and persisting the choice. The initial
- * paint is handled by the inline script in the layout to avoid a flash.
- */
 export function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
@@ -39,7 +34,7 @@ export function ThemeToggle() {
     try {
       localStorage.setItem(THEME_STORAGE_KEY, next);
     } catch {
-      // ignore storage failures (private mode, quota) — theme still applies
+      // theme still applies if storage is unavailable
     }
   }
 

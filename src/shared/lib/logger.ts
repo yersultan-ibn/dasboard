@@ -9,7 +9,6 @@ function stringifyPayload(payload: LogPayload): string {
   return JSON.stringify(payload);
 }
 
-/** Request/response logs are verbose-only (development); errors always log. */
 export function logRequest(message: string, payload?: LogPayload): void {
   if (!env.logging.verbose) {
     return;

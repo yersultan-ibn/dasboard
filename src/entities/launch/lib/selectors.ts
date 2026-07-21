@@ -11,10 +11,8 @@ export function createRocketNameMap(rockets: Rocket[]): Map<string, string> {
   return new Map(rockets.map((rocket) => [rocket.id, rocket.name]));
 }
 
-/** Status tone shared with `shared/ui`'s StatusBadge (structurally compatible). */
 export type LaunchStatusTone = "good" | "critical" | "warning" | "neutral";
 
-/** Maps a launch's success/upcoming flags to a display tone + human label. */
 export function getLaunchStatus(
   success: boolean | null,
   upcoming: boolean,
@@ -31,7 +29,6 @@ export function getLaunchStatus(
   return { tone: "neutral", label: "Неизвестно" };
 }
 
-/** Most recent launches first, capped to `limit`. */
 export function getRecentLaunches(launches: Launch[], limit: number): Launch[] {
   return [...launches]
     .sort(

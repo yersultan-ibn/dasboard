@@ -13,7 +13,6 @@ type StateMessageProps = {
   action?: ReactNode;
 };
 
-/** Centered empty/error placeholder with an icon, title and optional action. */
 export const StateMessage: FC<StateMessageProps> = ({
   title,
   description,

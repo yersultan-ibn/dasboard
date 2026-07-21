@@ -11,7 +11,6 @@ type CardProps = {
   children: ReactNode;
 };
 
-/** The base surface panel every framed block sits on. Purely presentational. */
 export const Card: FC<CardProps> = ({ className, interactive, children }) => (
   <section
     className={cn(styles.card, interactive && styles.interactive, className)}
@@ -24,9 +23,7 @@ type CardHeaderProps = {
   title: ReactNode;
   caption?: ReactNode;
   icon?: IconName;
-  /** Rendered at the far left, before the icon (e.g. a drag handle). */
   leading?: ReactNode;
-  /** Rendered at the far right (e.g. a remove button). */
   action?: ReactNode;
   headingLevel?: 2 | 3;
 };

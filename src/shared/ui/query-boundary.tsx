@@ -6,7 +6,6 @@ type QueryBoundaryProps = {
   isLoading: boolean;
   isError: boolean;
   isEmpty?: boolean;
-  /** Skeleton to show while loading; falls back to a small text state. */
   loading?: ReactNode;
   errorTitle?: string;
   errorDescription?: string;
@@ -15,11 +14,6 @@ type QueryBoundaryProps = {
   children: ReactNode;
 };
 
-/**
- * Collapses the loading / error / empty / ready branches every data widget
- * repeats into one declarative wrapper, so a tile body is written once for the
- * happy path and only supplies its own skeleton and copy.
- */
 export const QueryBoundary: FC<QueryBoundaryProps> = ({
   isLoading,
   isError,

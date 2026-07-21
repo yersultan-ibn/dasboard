@@ -29,9 +29,7 @@ export async function fetchJson<T>(
     cache: "no-store",
     ...options,
     headers: {
-      // Only send Content-Type when there's a body. On a plain GET this header
-      // is a non-simple header that forces a CORS preflight (OPTIONS), which the
-      // SpaceX API doesn't answer — breaking the request in the browser.
+      // Content-Type only with a body: on a GET it triggers a CORS preflight.
       ...(options?.body ? { "Content-Type": "application/json" } : {}),
       ...options?.headers,
     },
